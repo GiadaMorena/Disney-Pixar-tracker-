@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import confetti from 'canvas-confetti';
 import initialMoviesData from './data/movies.json';
 import Header from './components/Header';
+import Sticker from './components/Sticker';
 import MovieCard from './components/MovieCard';
 import MovieDetailModal from './components/MovieDetailModal';
 import StatsModal from './components/StatsModal';
@@ -127,27 +128,8 @@ export default function App() {
         <span className="material-symbols-filled text-[180px] text-secondary">stars</span>
       </div>
 
-      {/* Olaf Floating Mascot */}
-      <div
-        className="fixed bottom-6 left-4 z-40 pointer-events-none"
-        style={{ animation: 'float 5s ease-in-out infinite', animationDelay: '-1.5s' }}
-        title="Ciao! Sono Olaf, e mi piacciono i film Disney! ⛄"
-      >
-        <img
-          src="https://www.clipartmax.com/png/middle/83-834319_frozen-clip-art-olaf-frozen.png"
-          alt="Olaf da Frozen"
-          className="w-16 md:w-20 drop-shadow-xl"
-          style={{ filter: 'drop-shadow(0 4px 12px rgba(0,102,138,0.4))' }}
-          draggable={false}
-        />
-        {/* Speech bubble */}
-        <div
-          className="absolute -top-8 left-1/2 -translate-x-1/2 bg-white border-2 border-on-surface rounded-full px-2 py-0.5 text-[9px] font-label-bold text-on-surface whitespace-nowrap shadow-md"
-          style={{ boxShadow: '2px 2px 0 #1b1c15' }}
-        >
-          ⛄ Ciao!
-        </div>
-      </div>
+      {/* Sticker Mascot */}
+      <Sticker />
 
       {/* Header */}
       <Header
