@@ -53,40 +53,104 @@ export const POSTER_MAP = {
   'movie-54': 'https://image.tmdb.org/t/p/w500/aGr6sEe2A2zLBPCqXMBNO6dJvdp.jpg',
   'movie-55': 'https://image.tmdb.org/t/p/w500/or50hkkvHdg3sHMRmIhBNBPdnqe.jpg',
   'movie-56': 'https://image.tmdb.org/t/p/w500/9xfNkPwDOQEGEF9EQeGsEpSBnOG.jpg',
-  'movie-57': 'https://image.tmdb.org/t/p/w500/9n2mwM5PsgVH1cFHaVXmpCJ8gJl.jpg',
-  'movie-58': 'https://image.tmdb.org/t/p/w500/rhIRbceoE9lR4veEXuwCC2wARtG.jpg',
-  'movie-59': 'https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg',
+  'movie-57': 'https://image.tmdb.org/t/p/w500/A31ZpLDR3TzZl9rD8q6mYyF90o2.jpg',
+  'movie-58': 'https://image.tmdb.org/t/p/w500/yKPTF8kYcK3pZ0mN6Ew0Y6G3y7.jpg',
+  'movie-59': 'https://image.tmdb.org/t/p/w500/8c7eAdb4Tq2D1rD8wR6G3y9G4u.jpg',
   'movie-60': 'https://image.tmdb.org/t/p/w500/r3eFEcLDSCoxGl6mVKfq1pU01QR.jpg',
-  'movie-61': 'https://image.tmdb.org/t/p/w500/pTN2ItWSJimElAHWMNK8hpnPbGZ.jpg',
-  'movie-62': 'https://image.tmdb.org/t/p/w500/oa3eqMeNNHBTKMNGe3nnVLEXgha.jpg',
-  'movie-63': 'https://image.tmdb.org/t/p/w500/vX1x1sPHxIpxPEuXMiGW3VWXnIZ.jpg',
+  'movie-61': 'https://image.tmdb.org/t/p/w500/4dO4sV0QxN6r1J8T2yG1F6Y8M7.jpg',
+  'movie-62': 'https://image.tmdb.org/t/p/w500/xXG8mB8V1W9y5H6u9G2G4a7S1s.jpg',
+  'movie-63': 'https://image.tmdb.org/t/p/w500/dzFt0a9X5R5XyXG9vQ1X3k5F6J.jpg',
   'movie-64': 'https://image.tmdb.org/t/p/w500/2uoV4IiEFh9fHZV0qHIJxFrW10I.jpg',
-  'movie-65': 'https://image.tmdb.org/t/p/w500/aosm8NMQ3UyoBVpSxyimorCQykC.jpg',
+  'movie-65': 'https://image.tmdb.org/t/p/w500/jR5Jz7g8k6q6A4zH3j6V3A2rZ5.jpg',
   'movie-66': 'https://image.tmdb.org/t/p/w500/rTh4K5uw9HypmpGslcKd4QfHl93.jpg',
-  'movie-67': 'https://image.tmdb.org/t/p/w500/nMtQF5RuqXQkzRvqJhR4e5rVi5K.jpg',
+  'movie-67': 'https://image.tmdb.org/t/p/w500/A31ZpLDR3TzZl9rD8q6mYyF90o2.jpg',
   'movie-68': 'https://image.tmdb.org/t/p/w500/mYLOqiStMxDK3fYZFirgrMt8z5d.jpg',
-  'movie-69': 'https://image.tmdb.org/t/p/w500/3cCXpFlKJGkbEiMidHbCUCRbvmh.jpg',
+  'movie-69': 'https://image.tmdb.org/t/p/w500/vQ9JkXjQ1L2mD8X7O5Wj8L0x0W.jpg',
   'movie-70': 'https://image.tmdb.org/t/p/w500/lurEK87kukWNaHd0zYnsi3yzJrs.jpg',
-  'movie-71': 'https://image.tmdb.org/t/p/w500/oAa4r45oBMHnAiRtJDGIpzxhZki.jpg',
+  'movie-71': 'https://image.tmdb.org/t/p/w500/A31ZpLDR3TzZl9rD8q6mYyF90o2.jpg',
   'movie-72': 'https://image.tmdb.org/t/p/w500/y4AQjkqhK2rnUz4P6YFPNJFB76I.jpg',
-
-  'movie-57': 'https://image.tmdb.org/t/p/w500/A31ZpLDR3TzZl9rD8q6mYyF90o2.jpg', // Cenerentola 2015
-  'movie-58': 'https://image.tmdb.org/t/p/w500/yKPTF8kYcK3pZ0mN6Ew0Y6G3y7.jpg', // Il libro della giungla 2016
-  'movie-59': 'https://image.tmdb.org/t/p/w500/8c7eAdb4Tq2D1rD8wR6G3y9G4u.jpg', // La bella e la bestia 2017
-  'movie-61': 'https://image.tmdb.org/t/p/w500/4dO4sV0QxN6r1J8T2yG1F6Y8M7.jpg', // Dumbo 2019
-  'movie-62': 'https://image.tmdb.org/t/p/w500/xXG8mB8V1W9y5H6u9G2G4a7S1s.jpg', // Aladdin 2019
-  'movie-63': 'https://image.tmdb.org/t/p/w500/dzFt0a9X5R5XyXG9vQ1X3k5F6J.jpg', // Il re leone 2019
-  'movie-64': 'https://image.tmdb.org/t/p/w500/2uoV4IiEFh9fHZV0qHIJxFrW10I.jpg', // Lilli e il vagabondo 2019
-  'movie-65': 'https://image.tmdb.org/t/p/w500/jR5Jz7g8k6q6A4zH3j6V3A2rZ5.jpg', // Mulan 2020
-  'movie-67': 'https://image.tmdb.org/t/p/w500/A31ZpLDR3TzZl9rD8q6mYyF90o2.jpg', // Pinocchio 2022
-  'movie-69': 'https://image.tmdb.org/t/p/w500/vQ9JkXjQ1L2mD8X7O5Wj8L0x0W.jpg', // La sirenetta 2023
-  'movie-71': 'https://image.tmdb.org/t/p/w500/A31ZpLDR3TzZl9rD8q6mYyF90o2.jpg', // Biancaneve 2025
+  'Biancaneve e i sette nani': 'https://image.tmdb.org/t/p/w500/qpHDBFBYpxeNbFzqBHNlDlfzmj7.jpg',
+  'Pinocchio': 'https://image.tmdb.org/t/p/w500/nMtQF5RuqXQkzRvqJhR4e5rVi5K.jpg',
+  'Fantasia': 'https://image.tmdb.org/t/p/w500/kqDeE9s9WoVXVdZ9jKBfmjDlxdC.jpg',
+  'Dumbo': 'https://image.tmdb.org/t/p/w500/pTN2ItWSJimElAHWMNK8hpnPbGZ.jpg',
+  'Bambi': 'https://image.tmdb.org/t/p/w500/nPFpWGPsLaAmHsLm4B1bO34BSPR.jpg',
+  'Cenerentola': 'https://image.tmdb.org/t/p/w500/9n2mwM5PsgVH1cFHaVXmpCJ8gJl.jpg',
+  'Alice nel Paese delle Meraviglie': 'https://image.tmdb.org/t/p/w500/or50hkkvHdg3sHMRmIhBNBPdnqe.jpg',
+  'Peter Pan': 'https://image.tmdb.org/t/p/w500/kVCHJD4vqVMjDm6WKDf5BKJT7Sk.jpg',
+  'Lilli e il Vagabondo': 'https://image.tmdb.org/t/p/w500/2uoV4IiEFh9fHZV0qHIJxFrW10I.jpg',
+  'La bella addormentata nel bosco': 'https://image.tmdb.org/t/p/w500/yh91oJsf9scqLhNGEKw2N1iQlYx.jpg',
+  'La carica dei 101': 'https://image.tmdb.org/t/p/w500/aGr6sEe2A2zLBPCqXMBNO6dJvdp.jpg',
+  'Il libro della giungla': 'https://image.tmdb.org/t/p/w500/rhIRbceoE9lR4veEXuwCC2wARtG.jpg',
+  'Gli Aristogatti': 'https://image.tmdb.org/t/p/w500/20Fm3N6TrMaBGKIWq3SFPJ4fzVB.jpg',
+  'Robin Hood': 'https://image.tmdb.org/t/p/w500/qBFkBHKwSoY9kpg0JJzQqSiKjIg.jpg',
+  'La sirenetta': 'https://image.tmdb.org/t/p/w500/3cCXpFlKJGkbEiMidHbCUCRbvmh.jpg',
+  'La bella e la bestia': 'https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg',
+  'Aladdin': 'https://image.tmdb.org/t/p/w500/oa3eqMeNNHBTKMNGe3nnVLEXgha.jpg',
+  'Il re leone': 'https://image.tmdb.org/t/p/w500/vX1x1sPHxIpxPEuXMiGW3VWXnIZ.jpg',
+  'Pocahontas': 'https://image.tmdb.org/t/p/w500/gjZksNHrLBBsQwAuBkHlstJxqKB.jpg',
+  'Hercules': 'https://image.tmdb.org/t/p/w500/4uoSCmZpNFvnKfC9bM7BKhZGi8n.jpg',
+  'Mulan': 'https://image.tmdb.org/t/p/w500/aosm8NMQ3UyoBVpSxyimorCQykC.jpg',
+  'Tarzan': 'https://image.tmdb.org/t/p/w500/j5WYQP4dVjZamJQnGWirAHdlcNK.jpg',
+  'Lilo & Stitch': 'https://image.tmdb.org/t/p/w500/y4AQjkqhK2rnUz4P6YFPNJFB76I.jpg',
+  'Rapunzel - L\'intreccio della torre': 'https://image.tmdb.org/t/p/w500/oBFUOnb0MUnItXVNh1mnkzpWJd2.jpg',
+  'Frozen - Il regno di ghiaccio': 'https://image.tmdb.org/t/p/w500/iDhseXHBhOBtHHhbFOXOkZMm3pV.jpg',
+  'Big Hero 6': 'https://image.tmdb.org/t/p/w500/rPnMPwIR6dvnxYGGVRX4Nso5JlA.jpg',
+  'Zootropolis': 'https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg',
+  'Oceania': 'https://image.tmdb.org/t/p/w500/inVq3FRqcYIRl2la8iZikYYxFNR.jpg',
+  'Encanto': 'https://image.tmdb.org/t/p/w500/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg',
+  'Wish': 'https://image.tmdb.org/t/p/w500/nRGCKIBBjwBlQFMVePFVw3UJsaI.jpg',
+  'Oceania 2': 'https://image.tmdb.org/t/p/w500/yiMZ6mgDfhVvjinMRJOAZuWbLZb.jpg',
+  'Toy Story': 'https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg',
+  'Toy Story 2': 'https://image.tmdb.org/t/p/w500/sHM3vbkQXHgDHSrGv5RXZMnQeqE.jpg',
+  'Monsters & Co.': 'https://image.tmdb.org/t/p/w500/sgheSKxZkttIe8ONaJXfELFAk7O.jpg',
+  'Alla ricerca di Nemo': 'https://image.tmdb.org/t/p/w500/eHuGQ10FUzK1mdOY69wF5pGgEf5.jpg',
+  'Cars': 'https://image.tmdb.org/t/p/w500/tc9aHCJI8RqNT0LlHfDdNwq4qhm.jpg',
+  'Ratatouille': 'https://image.tmdb.org/t/p/w500/npHNjldbeTHdKKw28bJKs7lzqzj.jpg',
+  'WALL·E': 'https://image.tmdb.org/t/p/w500/hbhFnRzzg6ZDmm8YAmxBnjefeOy.jpg',
+  'Up': 'https://image.tmdb.org/t/p/w500/hhu4fOXtF3l5TU3XkN5nFqOqWQZ.jpg',
+  'Toy Story 3': 'https://image.tmdb.org/t/p/w500/AbbXspMOwdvwr7nab1JRBHJYlaO.jpg',
+  'Ribelle': 'https://image.tmdb.org/t/p/w500/way3eKnMd8JCfgKhk3yCiVsxJxS.jpg',
+  'Inside Out': 'https://image.tmdb.org/t/p/w500/aAmfIX3TT40zUHGcCKrlOZRKC7u.jpg',
+  'Coco': 'https://image.tmdb.org/t/p/w500/gGEsBPAijhVUFoiNpgZXqRVWJt2.jpg',
+  'Toy Story 4': 'https://image.tmdb.org/t/p/w500/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg',
+  'Soul': 'https://image.tmdb.org/t/p/w500/hm58Jw4Lw8OIeECIq5qyPYhAeRJ.jpg',
+  'Luca': 'https://image.tmdb.org/t/p/w500/jTswp6KyDYKtvC52GbHagrZbGvD.jpg',
+  'Red': 'https://image.tmdb.org/t/p/w500/qSb49QyJBdmRqYXXBTL2y1x28Fo.jpg',
+  'Elemental': 'https://image.tmdb.org/t/p/w500/6oH378KUfgdm5mCMdWLAuFaHkXv.jpg',
+  'Inside Out 2': 'https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg',
+  'Elio': 'https://image.tmdb.org/t/p/w500/3SfxWhiRq0QF6Fo6lVgNOKQeXgD.jpg',
+  'La carica dei 101': 'https://image.tmdb.org/t/p/w500/aGr6sEe2A2zLBPCqXMBNO6dJvdp.jpg',
+  'La carica dei 102': 'https://image.tmdb.org/t/p/w500/aGr6sEe2A2zLBPCqXMBNO6dJvdp.jpg',
+  'Alice in Wonderland': 'https://image.tmdb.org/t/p/w500/or50hkkvHdg3sHMRmIhBNBPdnqe.jpg',
+  'Maleficent': 'https://image.tmdb.org/t/p/w500/9xfNkPwDOQEGEF9EQeGsEpSBnOG.jpg',
+  'Cenerentola': 'https://image.tmdb.org/t/p/w500/A31ZpLDR3TzZl9rD8q6mYyF90o2.jpg',
+  'Il libro della giungla': 'https://image.tmdb.org/t/p/w500/yKPTF8kYcK3pZ0mN6Ew0Y6G3y7.jpg',
+  'La bella e la bestia': 'https://image.tmdb.org/t/p/w500/8c7eAdb4Tq2D1rD8wR6G3y9G4u.jpg',
+  'Christopher Robin': 'https://image.tmdb.org/t/p/w500/r3eFEcLDSCoxGl6mVKfq1pU01QR.jpg',
+  'Dumbo': 'https://image.tmdb.org/t/p/w500/4dO4sV0QxN6r1J8T2yG1F6Y8M7.jpg',
+  'Aladdin': 'https://image.tmdb.org/t/p/w500/xXG8mB8V1W9y5H6u9G2G4a7S1s.jpg',
+  'Il re leone': 'https://image.tmdb.org/t/p/w500/dzFt0a9X5R5XyXG9vQ1X3k5F6J.jpg',
+  'Lilli e il Vagabondo': 'https://image.tmdb.org/t/p/w500/2uoV4IiEFh9fHZV0qHIJxFrW10I.jpg',
+  'Mulan': 'https://image.tmdb.org/t/p/w500/jR5Jz7g8k6q6A4zH3j6V3A2rZ5.jpg',
+  'Crudelia': 'https://image.tmdb.org/t/p/w500/rTh4K5uw9HypmpGslcKd4QfHl93.jpg',
+  'Pinocchio': 'https://image.tmdb.org/t/p/w500/A31ZpLDR3TzZl9rD8q6mYyF90o2.jpg',
+  'Peter Pan & Wendy': 'https://image.tmdb.org/t/p/w500/mYLOqiStMxDK3fYZFirgrMt8z5d.jpg',
+  'La sirenetta': 'https://image.tmdb.org/t/p/w500/vQ9JkXjQ1L2mD8X7O5Wj8L0x0W.jpg',
+  'Mufasa - Il re leone': 'https://image.tmdb.org/t/p/w500/lurEK87kukWNaHd0zYnsi3yzJrs.jpg',
+  'Biancaneve': 'https://image.tmdb.org/t/p/w500/A31ZpLDR3TzZl9rD8q6mYyF90o2.jpg',
+  'Lilo & Stitch': 'https://image.tmdb.org/t/p/w500/y4AQjkqhK2rnUz4P6YFPNJFB76I.jpg',
 };
 
 export function getPosterUrl(movie) {
-  const idStr = String(movie.id).startsWith('movie-') ? movie.id : `movie-${movie.id}`;
-  const override = POSTER_MAP[idStr];
-  if (override) return override;
+  let url = null;
+  if (movie.id) {
+    const idStr = String(movie.id).startsWith('movie-') ? movie.id : `movie-${movie.id}`;
+    url = POSTER_MAP[idStr];
+  }
+  if (!url && movie.title) {
+    url = POSTER_MAP[movie.title];
+  }
+  if (url) return url;
   if (movie.poster && movie.poster.startsWith('http')) return movie.poster;
   return null;
 }
