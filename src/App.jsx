@@ -1,34 +1,19 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import confetti from 'canvas-confetti';
-import officialCatalog from './data/officialCatalog.json';
-import legacyCatalog from './data/movies.json';
+import initialMoviesData from './data/movies.json';
 import Header from './components/Header';
 import MovieCard from './components/MovieCard';
 import MovieDetailModal from './components/MovieDetailModal';
 import StatsModal from './components/StatsModal';
-import OlafSticker from './components/OlafSticker';
 
-const LOCAL_STORAGE_KEY = 'disney_pixar_vault_movies_v5';
-
-// The official list covers Disney's main banner. The original tracker adds
-// localized Italian titles and fills older Pixar entries missing from that list.
-const initialMoviesData = [...officialCatalog, ...legacyCatalog.filter(movie =>
-  !officialCatalog.some(official =>
-    official.year === movie.year &&
-    official.studio === movie.studio &&
-    official.title.toLocaleLowerCase() === movie.title.toLocaleLowerCase()
-  )
-)];
+const LOCAL_STORAGE_KEY = 'disney_pixar_vault_movies_v3';
 
 export default function App() {
   const [movies, setMovies] = useState(() => {
     try {
       const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
       if (saved) {
-        const parsed = JSON.parse(saved);
-        // Ignore stale/corrupt values so a bad localStorage entry cannot
-        // prevent the whole tracker from rendering.
-        if (Array.isArray(parsed)) return parsed;
+        return JSON.parse(saved);
       }
     } catch (e) {
       console.error('Failed to load movies from localStorage', e);
@@ -142,8 +127,27 @@ export default function App() {
         <span className="material-symbols-filled text-[180px] text-secondary">stars</span>
       </div>
 
-      {/* Olaf Sticker Mascot (sticker-forge web component) */}
-      <OlafSticker />
+      {/* Olaf Floating Mascot */}
+      <div
+        className="fixed bottom-6 left-4 z-40 pointer-events-none"
+        style={{ animation: 'float 5s ease-in-out infinite', animationDelay: '-1.5s' }}
+        title="Ciao! Sono Olaf, e mi piacciono i film Disney! ⛄"
+      >
+        <img
+          src="https://www.clipartmax.com/png/middle/83-834319_frozen-clip-art-olaf-frozen.png"
+          alt="Olaf da Frozen"
+          className="w-16 md:w-20 drop-shadow-xl"
+          style={{ filter: 'drop-shadow(0 4px 12px rgba(0,102,138,0.4))' }}
+          draggable={false}
+        />
+        {/* Speech bubble */}
+        <div
+          className="absolute -top-8 left-1/2 -translate-x-1/2 bg-white border-2 border-on-surface rounded-full px-2 py-0.5 text-[9px] font-label-bold text-on-surface whitespace-nowrap shadow-md"
+          style={{ boxShadow: '2px 2px 0 #1b1c15' }}
+        >
+          ⛄ Ciao!
+        </div>
+      </div>
 
       {/* Header */}
       <Header
