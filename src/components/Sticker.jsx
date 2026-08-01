@@ -23,10 +23,10 @@ export default function Sticker() {
   }, []);
 
   return (
-    <div className="fixed bottom-0 left-0 z-50 pointer-events-auto" style={{ transform: 'scale(0.8)', transformOrigin: 'bottom left' }}>
+    <div className="fixed bottom-0 left-0 z-50 origin-bottom-left hidden md:block md:scale-[0.5] lg:scale-[0.7] pointer-events-none md:pointer-events-auto">
       {/* Pop-up simpatico */}
       <div 
-        className="absolute -top-12 left-1/4 bg-white border-4 border-on-surface rounded-3xl px-8 py-4 text-3xl font-label-bold text-on-surface whitespace-nowrap z-10"
+        className="absolute -top-12 left-1/4 bg-white border-4 border-on-surface rounded-3xl px-8 py-4 text-3xl font-label-bold text-on-surface whitespace-nowrap z-10 hidden md:block"
         style={{ boxShadow: '6px 6px 0 #1b1c15', animation: 'float 3s ease-in-out infinite' }}
       >
         Ciao! Scegliamo un film? ✨

@@ -11,7 +11,7 @@ export default function Header({ seenCount, totalCount, onOpenStats, onResetData
           castle
         </span>
         <div>
-          <h1 className="text-lg md:text-2xl font-headline-md font-extrabold text-on-primary tracking-tight leading-none flex items-center gap-2">
+          <h1 className="text-base sm:text-lg md:text-2xl font-headline-md font-extrabold text-on-primary tracking-tight leading-none flex items-center gap-2">
             Disney & Pixar Vault
           </h1>
           <p className="text-[10px] md:text-xs text-amber-200 font-label-bold font-normal opacity-90 hidden sm:block">
@@ -44,7 +44,7 @@ export default function Header({ seenCount, totalCount, onOpenStats, onResetData
         {/* Action: Stats */}
         <button 
           onClick={onOpenStats}
-          className="candy-button bg-amber-400 text-on-surface p-2 md:px-3 md:py-2 rounded-full border-2 border-on-surface font-label-bold text-xs md:text-sm flex items-center gap-1.5 min-h-[40px]"
+          className="hidden sm:flex candy-button bg-amber-400 text-on-surface p-2 md:px-3 md:py-2 rounded-full border-2 border-on-surface font-label-bold text-xs md:text-sm items-center gap-1.5 min-h-[40px]"
           title="Statistiche Vault"
         >
           <span className="material-symbols-filled text-base">bar_chart</span>
