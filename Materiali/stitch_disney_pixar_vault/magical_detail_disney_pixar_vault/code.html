@@ -1,0 +1,345 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Disney &amp; Pixar Vault - Movie Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Quicksand:wght@500;700&amp;family=Rubik:wght@700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        @keyframes sparkle {
+            0% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+            100% { transform: scale(1) rotate(360deg); opacity: 1; }
+        }
+        .animate-sparkle {
+            animation: sparkle 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        .storybook-page {
+            box-shadow: 8px 8px 0px 0px rgba(64, 0, 16, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .storybook-page::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 2px 2px, rgba(185, 0, 62, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+            pointer-events: none;
+        }
+        .candy-button {
+            background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+            box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.2);
+        }
+        .candy-button:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+        .perforated-edge {
+            mask-image: radial-gradient(circle, transparent 10px, black 11px);
+            mask-size: 30px 100%;
+            mask-position: -15px 0;
+            mask-repeat: repeat-x;
+        }
+        .star-glow {
+            filter: drop-shadow(0 0 8px rgba(233, 196, 0, 0.8));
+        }
+        .mickey-watermark {
+            opacity: 0.03;
+            pointer-events: none;
+            position: absolute;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#fffbff",
+                        "on-surface": "#1b1c15",
+                        "primary-container": "#e02254",
+                        "secondary-container": "#54c7ff",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fcfaed",
+                        "primary": "#b9003e",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fcfaed",
+                        "surface-dim": "#dcdace",
+                        "inverse-primary": "#ffb2b9",
+                        "surface-container-highest": "#e4e3d6",
+                        "on-secondary-fixed": "#001e2c",
+                        "on-primary-fixed-variant": "#91002f",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1c15",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-secondary-container": "#00516f",
+                        "primary-fixed-dim": "#ffb2b9",
+                        "secondary": "#00668a",
+                        "surface-container-high": "#eae9dc",
+                        "tertiary-container": "#c9a900",
+                        "primary-fixed": "#ffdadc",
+                        "surface-variant": "#e4e3d6",
+                        "surface-container-low": "#f6f4e7",
+                        "secondary-fixed": "#c4e7ff",
+                        "tertiary": "#705d00",
+                        "on-surface-variant": "#5b3f42",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary-fixed-dim": "#7bd0ff",
+                        "outline-variant": "#e4bdc0",
+                        "surface": "#fcfaed",
+                        "inverse-surface": "#303129",
+                        "surface-tint": "#bd0040",
+                        "outline": "#8f6f71",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container": "#f0eee1",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary-fixed": "#400010",
+                        "inverse-on-surface": "#f3f1e4",
+                        "on-secondary-fixed-variant": "#004c69"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "section-gap": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Quicksand"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-bold": ["Rubik"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen pb-32">
+<!-- Top AppBar -->
+<header class="bg-primary text-on-primary flex justify-between items-center w-full px-gutter py-4 h-20 docked full-width top-0 rounded-b-lg border-b-4 border-on-primary-fixed-variant shadow-[0_4px_0_0_rgba(64,0,16,1)] sticky z-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-headline-md" style="font-variation-settings: 'FILL' 1;">castle</span>
+<h1 class="text-headline-md font-headline-md font-extrabold text-on-primary tracking-tight">Disney &amp; Pixar Vault</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="text-tertiary-fixed font-label-bold text-label-bold hover:scale-105 transition-transform duration-200" href="#">Vault</a>
+<a class="text-on-primary opacity-80 font-label-bold text-label-bold hover:scale-105 transition-transform duration-200" href="#">Wishlist</a>
+<a class="text-on-primary opacity-80 font-label-bold text-label-bold hover:scale-105 transition-transform duration-200" href="#">Cinema</a>
+</nav>
+<span class="material-symbols-outlined cursor-pointer hover:scale-105 transition-transform">account_circle</span>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-gutter mb-12 mt-4 md:mt-12">
+<!-- Storybook Container -->
+<div class="animate-sparkle storybook-page bg-surface-container-lowest border-4 border-on-surface rounded-lg md:p-12 flex flex-col md:flex-row gap-12 relative p-4 gap-6 md:gap-12">
+<!-- Watermarks -->
+<span class="material-symbols-outlined mickey-watermark text-[120px] -top-10 -left-10 rotate-12">potted_plant</span>
+<span class="material-symbols-outlined mickey-watermark text-[80px] bottom-10 right-20 -rotate-12">star</span>
+<!-- Left Column: Poster & Technical Data -->
+<div class="flex-1 space-y-4 md:space-y-8">
+<div class="relative group">
+<div class="absolute inset-0 bg-primary translate-x-4 translate-y-4 rounded-lg -z-10"></div>
+<div class="rounded-lg overflow-hidden border-4 border-on-surface shadow-xl">
+<img class="w-full aspect-[2/3] object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant and colorful cinematic poster for a modern animated fantasy film. The artwork features a whimsical kingdom with floating islands, glowing flora, and a brave young explorer standing on a cliff edge. The style is 3D animation with rich textures, warm golden hour lighting, and saturated tones of teal and magenta." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXlkGK1ya9O2ZolSTWV_1nzsebnB7CKs8YkNQleF5Aakk8wvLCzuu7sO39XPLWDKnMGMAdrpjCzcYgdmmnL1bxkAXX77Olnd7ggdINo0-tmZV8BN0uHvuEBhGp6a4i_TRWeI46vHiUae7pF1JefbWjjpLLEIzuOccUDmM72ozotLvdxf6iAvA8eeGw6kRG1Em0k7V6zC7i131a4y-7p1ep0AHs9_k9KAVGV1QyZCrS_kfzDzl3Gv_c-zkLf93KkywRV_Hl-bYpdfQG">
+</div>
+<!-- Sparkle Overlay -->
+<div class="absolute -top-4 -right-4 bg-tertiary-fixed text-on-tertiary-fixed p-3 rounded-full border-4 border-on-surface shadow-lg rotate-12">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+<!-- Technical Data -->
+<div class="bg-surface-container rounded-lg p-6 border-2 border-dashed border-outline space-y-4">
+<h3 class="font-headline-md text-headline-md text-primary">Detalles de la Cinta</h3>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Director</p>
+<p class="font-body-lg text-body-lg">Enrico Casarosa</p>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Año</p>
+<p class="font-body-lg text-body-lg">2021</p>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Duración</p>
+<p class="font-body-lg text-body-lg">95 min</p>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Estudio</p>
+<p class="font-body-lg text-body-lg">Pixar</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Elements -->
+<div class="flex-1 space-y-10">
+<div class="space-y-4">
+<h2 class="font-display-lg text-display-lg text-primary leading-tight">Crónicas de la Amistad</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic">"Una aventura bajo el sol de la Riviera Italiana donde los secretos se esconden bajo el agua."</p>
+</div>
+<!-- Toggle: Magicamente Visto! -->
+<div class="bg-secondary-container/20 rounded-lg border-4 border-on-surface flex items-center justify-between group cursor-pointer hover:bg-secondary-container/30 transition-colors p-4 md:p-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<span class="font-headline-md text-headline-md">Magicamente Visto!</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value="">
+<div class="w-20 h-10 bg-error rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-8 after:w-8 after:transition-all peer-checked:bg-success border-4 border-on-surface bg-[#ba1a1a] peer-checked:bg-[#22c55e]"></div>
+</label>
+</div>
+<!-- Rating: Glowing Stars -->
+<div class="space-y-4 text-center py-4">
+<p class="font-label-bold text-label-bold uppercase tracking-[0.2em]">Calificación Mágica</p>
+<div class="flex justify-center gap-1 md:gap-2">
+<span class="material-symbols-outlined text-5xl text-tertiary-fixed star-glow cursor-pointer hover:scale-125 transition-transform" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-5xl text-tertiary-fixed star-glow cursor-pointer hover:scale-125 transition-transform" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-5xl text-tertiary-fixed star-glow cursor-pointer hover:scale-125 transition-transform" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-5xl text-tertiary-fixed star-glow cursor-pointer hover:scale-125 transition-transform" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-5xl text-on-surface-variant opacity-20 cursor-pointer hover:scale-125 transition-transform">star</span>
+</div>
+</div>
+<!-- Review Area: Parchment -->
+<div class="relative">
+<div class="absolute -top-4 left-6 bg-surface-container-lowest px-2 flex items-center gap-2 z-10 border-2 border-on-surface rounded-full">
+<span class="material-symbols-outlined text-primary scale-75">edit_note</span>
+<span class="font-label-bold text-label-bold">Tu Reseña</span>
+</div>
+<div class="bg-[#fdfcf0] border-4 border-on-surface rounded-lg shadow-inner min-h-[160px] relative p-4 md:p-8 min-h-[120px] md:min-h-[160px]">
+<p class="font-body-lg text-body-lg text-on-surface-variant font-serif italic leading-relaxed">
+                            Fue una experiencia maravillosa. El estilo artístico de la película me recordó a los veranos interminables de mi infancia. Los colores son vibrantes y el mensaje sobre la aceptación es simplemente...
+                        </p>
+<div class="absolute bottom-4 right-4 text-primary opacity-40">
+<span class="material-symbols-outlined text-4xl">edit_square</span>
+</div>
+</div>
+</div>
+<!-- Actions: Star Button -->
+<div class="flex gap-4">
+<button class="flex-1 candy-button bg-primary text-on-primary py-4 px-8 rounded-lg font-label-bold text-label-bold border-4 border-on-surface flex items-center justify-center gap-3 active:translate-y-1 transition-all text-lg md:text-label-bold">
+<span class="material-symbols-outlined">play_circle</span>
+                        REPRODUCIR AHORA
+                    </button>
+<button class="w-20 h-20 candy-button bg-tertiary-fixed text-on-tertiary-fixed border-4 border-on-surface rounded-full flex items-center justify-center group active:translate-y-1 transition-all shadow-lg overflow-hidden relative">
+<span class="material-symbols-outlined text-4xl group-hover:scale-125 transition-transform" style="font-variation-settings: 'FILL' 1;">star</span>
+<!-- Tiny sparkles around star on hover -->
+<div class="absolute inset-0 pointer-events-none group-hover:animate-ping opacity-20 bg-white rounded-full"></div>
+</button>
+</div>
+</div>
+</div>
+<!-- Extra: Suggested Movies (Bento Grid Style) -->
+<section class="mt-section-gap space-y-8">
+<div class="flex justify-between items-end">
+<h2 class="font-display-lg text-display-lg text-on-surface">Más de la Colección</h2>
+<button class="font-label-bold text-label-bold text-primary underline underline-offset-4 decoration-4">Ver Todo</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Suggestion 1 -->
+<div class="md:col-span-2 group relative overflow-hidden rounded-lg border-4 border-on-surface h-64 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic widescreen landscape from a high-quality 3D animated film. It shows a lush jungle at night with bioluminescent plants glowing in shades of neon blue and purple. A small, cute creature is peaking from behind a giant leaf. Saturated colors and magical atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAP4ClWTCGpTzCX-X8M3BcAaKoFhNUw_uZn6KJ9Lyzg6bOo8XbO_oX4GqHriGvWm3UAA9-n5_x49Lp9fvvzYdxh8cLjtBD--gZj_Y9zHwHIP8EraCsLCpNKolhyGsVvWXrz3qGJzIXUS6fkoNpTsg_XWUPUdDdHXGz0VKmbYlwuzjb2N7XUKX2-Jxrj-00lTAu0SfUaO8Z7Co0N7hqlnQMDqB5n2vCvr1rl9zLD7p51dD6ZLSA5YrxwdjgusxkHPCDpynn0LFASc8Iu')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<span class="text-xs font-label-bold bg-secondary px-2 py-1 rounded mb-2 inline-block">NUEVO</span>
+<h4 class="font-headline-md text-headline-md">Mundo Extraño</h4>
+</div>
+</div>
+<!-- Suggestion 2 -->
+<div class="group relative overflow-hidden rounded-lg border-4 border-on-surface h-64 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A portrait-oriented movie poster still showing a legendary space ranger in a detailed white and green futuristic suit. The background is a star-filled galaxy with a bright nebula. The lighting is dramatic and high-contrast, highlighting the metallic sheen of the suit." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDP2PDYeyxWMGv5I4tGKSfovo5dkHwuBaw3IzWmHJwc5C6QFSiUN0x9ghBMgPDcYR2HdjL5mRSZTcTCpHxlxOciQ6DpP64AISJmJAQckBEHWeaBt_UIRw95n-aEfP74nWSueWd1DLIZzC9TdN44_CTKonWyegkezE6Ks3kb_hecOFoKmGRuE0U8IjnAxKyOaHHY5Hrhqbagod7AATCexx3l7tnRIxDxx2b51nGx5HEYJvo9Bhn_opjrB049cF29y8XbUCShM-rcKOdt')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<h4 class="font-headline-md text-headline-md">Lightyear</h4>
+</div>
+</div>
+<!-- Suggestion 3 -->
+<div class="group relative overflow-hidden rounded-lg border-4 border-on-surface h-64 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A vibrant animated scene featuring a large red panda standing in a colorful bedroom filled with early 2000s posters and stickers. The atmosphere is joyful and chaotic. Saturated red and pink tones dominate the palette, creating a nostalgic and energetic mood." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCg2WtwuO_-Jp0OAvs3SqazbJl2nV9ueJWSWv-UMtR0ZDrwX7HIbTuiB-k1kzq4JtY3HzoJ5ewOVWxdQ3S6P8YrMVCGeJf--A31Xqy77DIEJMzrpgdF_DuTF398jf26p5J1I_Hid60_Q5u4MjwjmAQg-QRgLkjg0-g5mlkV6AAdDw4hZTlyhNDrWRM4B0UJCM6-Mn6qWMynNAKz_Yd2fxHGnborlOdZMiNIE7hEhe_Ar7wlj584_cnKJg21sIxdc28MIf0CkKi_TSlo')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<h4 class="font-headline-md text-headline-md">Turning Red</h4>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Nav Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile pb-6 pt-3 bg-surface-container border-t-4 border-on-surface shadow-[0_-4px_12px_0_rgba(185,0,62,0.2)] rounded-t-lg">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-2 shadow-[0_4px_0_0_rgba(145,0,47,1)] transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-bold text-label-bold">Vault</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors" href="#">
+<span class="material-symbols-outlined">star</span>
+<span class="font-label-bold text-label-bold">Wishlist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors" href="#">
+<span class="material-symbols-outlined">movie_filter</span>
+<span class="font-label-bold text-label-bold">Cinema</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors" href="#">
+<span class="material-symbols-outlined">person_celebrate</span>
+<span class="font-label-bold text-label-bold">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button -->
+<div class="fixed bottom-24 right-6 md:bottom-12 md:right-12 z-40">
+<button class="w-16 h-16 bg-tertiary-container text-on-tertiary-container rounded-full border-4 border-on-surface shadow-[0_4px_0_0_rgba(76,63,0,1)] flex items-center justify-center candy-button active:translate-y-1 active:shadow-none transition-all">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">magic_button</span>
+</button>
+</div>
+<script>
+        // Simple Micro-interaction for the Star Button
+        const starBtn = document.querySelector('.bg-tertiary-fixed.w-20.h-20');
+        starBtn?.addEventListener('click', () => {
+            const star = starBtn.querySelector('.material-symbols-outlined');
+            star.style.transform = 'scale(1.5) rotate(72deg)';
+            setTimeout(() => {
+                star.style.transform = 'scale(1) rotate(0deg)';
+            }, 300);
+        });
+
+        // Toggle Switch Animation Logic
+        const toggleInput = document.querySelector('input[type="checkbox"]');
+        toggleInput?.addEventListener('change', (e) => {
+            const parent = e.target.closest('.group');
+            if (e.target.checked) {
+                parent.classList.add('bg-secondary-container/30');
+                parent.classList.remove('bg-error-container/30');
+            } else {
+                parent.classList.remove('bg-secondary-container/30');
+                parent.classList.add('bg-error-container/30');
+            }
+        });
+    </script>
+
+
+</body></html>

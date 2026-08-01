@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #fcfaed;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(255, 218, 220, 0.4) 0%, transparent 20%),
+      radial-gradient(circle at 90% 80%, rgba(196, 231, 255, 0.4) 0%, transparent 20%),
+      radial-gradient(circle at 50% 50%, rgba(255, 225, 109, 0.2) 0%, transparent 40%);
+    min-height: 100vh;
+  }
+}
+
+/* Material Symbols - both outlined and filled use the same font file,
+   just with different font-variation-settings FILL axis */
+.material-symbols-outlined,
+.material-symbols-filled {
+  font-family: 'Material Symbols Outlined', sans-serif;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-filled {
+  font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+}
+
+.wavy-banner {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 95% 88%, 90% 85%, 85% 88%, 80% 85%, 75% 88%, 70% 85%, 65% 88%, 60% 85%, 55% 88%, 50% 85%, 45% 88%, 40% 85%, 35% 88%, 30% 85%, 25% 88%, 20% 85%, 15% 88%, 10% 85%, 5% 88%, 0% 85%);
+}
+
+.candy-button {
+  background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+  box-shadow: 0 4px 0 0 rgba(27, 28, 21, 0.9);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.candy-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 0 rgba(27, 28, 21, 0.9);
+}
+
+.candy-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 0px 0 0 rgba(27, 28, 21, 0.9);
+}
+
+.paper-cutout {
+  box-shadow: 6px 6px 0px 0px #1b1c15;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.paper-cutout:hover {
+  transform: translate(-3px, -4px) rotate(1.5deg);
+  box-shadow: 10px 10px 0px 0px #1b1c15;
+}
+
+.storybook-page {
+  box-shadow: 8px 8px 0px 0px rgba(27, 28, 21, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.storybook-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 2px 2px, rgba(185, 0, 62, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.star-glow {
+  filter: drop-shadow(0 0 8px rgba(233, 196, 0, 0.8));
+}
+
+.mickey-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(8deg); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  animation: sparkle-anim 1.2s ease-in-out forwards;
+}
+
+@keyframes sparkle-anim {
+  0% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1.3) rotate(180deg); opacity: 1; }
+  100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+.magic-wand-wave {
+  animation: wave-wand 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes wave-wand {
+  from { transform: rotate(-10deg); }
+  to { transform: rotate(25deg); }
+}

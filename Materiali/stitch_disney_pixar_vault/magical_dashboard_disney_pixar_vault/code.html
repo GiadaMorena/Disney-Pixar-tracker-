@@ -1,0 +1,363 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Disney &amp; Pixar Vault - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Quicksand:wght@500;600;700&amp;family=Rubik:wght@700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;family=Quicksand:wght@100..900&amp;family=Rubik:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#fffbff",
+                    "on-surface": "#1b1c15",
+                    "primary-container": "#e02254",
+                    "secondary-container": "#54c7ff",
+                    "tertiary-fixed-dim": "#e9c400",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#fcfaed",
+                    "primary": "#b9003e",
+                    "on-tertiary": "#ffffff",
+                    "background": "#fcfaed",
+                    "surface-dim": "#dcdace",
+                    "inverse-primary": "#ffb2b9",
+                    "surface-container-highest": "#e4e3d6",
+                    "on-secondary-fixed": "#001e2c",
+                    "on-primary-fixed-variant": "#91002f",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-background": "#1b1c15",
+                    "tertiary-fixed": "#ffe16d",
+                    "on-secondary-container": "#00516f",
+                    "primary-fixed-dim": "#ffb2b9",
+                    "secondary": "#00668a",
+                    "surface-container-high": "#eae9dc",
+                    "tertiary-container": "#c9a900",
+                    "primary-fixed": "#ffdadc",
+                    "surface-variant": "#e4e3d6",
+                    "surface-container-low": "#f6f4e7",
+                    "secondary-fixed": "#c4e7ff",
+                    "tertiary": "#705d00",
+                    "on-surface-variant": "#5b3f42",
+                    "on-tertiary-container": "#4c3f00",
+                    "secondary-fixed-dim": "#7bd0ff",
+                    "outline-variant": "#e4bdc0",
+                    "surface": "#fcfaed",
+                    "inverse-surface": "#303129",
+                    "surface-tint": "#bd0040",
+                    "outline": "#8f6f71",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#544600",
+                    "surface-container": "#f0eee1",
+                    "on-tertiary-fixed": "#221b00",
+                    "on-primary-fixed": "#400010",
+                    "inverse-on-surface": "#f3f1e4",
+                    "on-secondary-fixed-variant": "#004c69"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "section-gap": "48px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Quicksand"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "label-bold": ["Rubik"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-md": ["Quicksand"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcfaed;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 218, 220, 0.4) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(196, 231, 255, 0.4) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(255, 225, 109, 0.2) 0%, transparent 40%);
+            overflow-x: hidden;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .wavy-banner {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 95% 88%, 90% 85%, 85% 88%, 80% 85%, 75% 88%, 70% 85%, 65% 88%, 60% 85%, 55% 88%, 50% 85%, 45% 88%, 40% 85%, 35% 88%, 30% 85%, 25% 88%, 20% 85%, 15% 88%, 10% 85%, 5% 88%, 0% 85%);
+        }
+
+        .candy-button {
+            background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+            box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.15);
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .candy-button:active {
+            transform: translateY(4px);
+            box-shadow: 0 0px 0 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .paper-cutout {
+            box-shadow: 8px 8px 0px 0px #1b1c15;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .paper-cutout:hover {
+            transform: translate(-4px, -4px) rotate(2deg);
+            box-shadow: 12px 12px 0px 0px #1b1c15;
+        }
+
+        .oval-card {
+            border-radius: 50% / 10%;
+        }
+
+        .sparkle-container {
+            position: relative;
+        }
+        .sparkle {
+            position: absolute;
+            pointer-events: none;
+            animation: sparkle-anim 1.5s infinite linear;
+        }
+        @keyframes sparkle-anim {
+            0% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1) rotate(180deg); opacity: 1; }
+            100% { transform: scale(0) rotate(360deg); opacity: 0; }
+        }
+
+        .mickey-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        .pixie-dust {
+            filter: drop-shadow(0 0 8px rgba(255, 225, 109, 0.8));
+        }
+
+        .magic-input:focus + .magic-wand {
+            animation: wave-wand 0.5s ease-in-out infinite alternate;
+        }
+        @keyframes wave-wand {
+            from { transform: rotate(-10deg); }
+            to { transform: rotate(20deg); }
+        }
+    </style>
+<style>
+            @keyframes wiggle {
+                0%, 100% { transform: rotate(0deg); }
+                25% { transform: rotate(-3deg); }
+                75% { transform: rotate(3deg); }
+            }
+        </style></head>
+<body class="font-body-md text-on-background min-h-screen pb-32">
+<!-- Floating Decor -->
+<div class="fixed top-12 left-8 opacity-10 mickey-float pointer-events-none">
+<span class="material-symbols-outlined text-[120px]">motion_photos_on</span>
+</div>
+<div class="fixed bottom-24 right-8 opacity-10 mickey-float pointer-events-none" style="animation-delay: -3s;">
+<span class="material-symbols-outlined text-[160px]">motion_photos_on</span>
+</div>
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 w-full z-50 px-4 py-2 h-16 bg-primary flex justify-between items-center wavy-banner border-b-4 border-on-primary-fixed-variant shadow-[0_4px_0_0_rgba(64,0,16,1)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-primary text-2xl">castle</span>
+<h1 class="text-xl font-headline-md font-extrabold text-on-primary tracking-tight">Disney &amp; Pixar Vault</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex bg-on-primary-fixed-variant/30 px-4 py-2 rounded-full border-2 border-on-primary/20 items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-bold text-on-primary">48/62</span>
+</div>
+<button class="hover:scale-105 transition-transform duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-2xl">account_circle</span>
+</button>
+</div>
+</header>
+<main class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto mt-20">
+<!-- Search & Hero Section -->
+<section class="flex flex-col items-center mb-8">
+<div class="relative w-full max-w-2xl group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-25 group-focus-within:opacity-50 transition duration-1000"></div>
+<div class="relative flex items-center bg-surface-container-lowest rounded-full border-4 border-on-surface p-2 shadow-[4px_4px_0_0_rgba(27,28,21,1)]">
+<input class="magic-input w-full bg-transparent border-none focus:ring-0 px-6 font-body-lg text-on-surface placeholder-on-surface/40" placeholder="Cerca la magia..." type="text">
+<div class="magic-wand pr-4 flex items-center">
+<span class="material-symbols-outlined text-primary text-3xl cursor-pointer">magic_button</span>
+</div>
+</div>
+</div>
+<!-- Candy Filter Buttons -->
+<div class="flex flex-wrap justify-center gap-4 mt-8"><button class="candy-button px-6 py-2.5 rounded-full bg-primary-container text-on-primary-container font-label-bold border-4 border-on-surface text-base min-h-[44px]">Tutti</button>
+<button class="candy-button px-6 py-2.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-bold border-4 border-on-surface text-base min-h-[44px]">Disney</button>
+<button class="candy-button px-6 py-2.5 rounded-full bg-secondary-container text-on-secondary-container font-label-bold border-4 border-on-surface text-base min-h-[44px]">Pixar</button>
+<button class="candy-button px-6 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-bold border-4 border-on-surface text-base min-h-[44px]">Visti</button>
+<button class="candy-button px-6 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-bold border-4 border-on-surface text-base min-h-[44px]">Da Vedere</button></div>
+</section>
+<!-- Movie Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 pb-24">
+<!-- Card 1 -->
+<div class="paper-cutout bg-white rounded-xl border-2 border-on-surface p-2 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-1 right-1 z-10">
+<span class="material-symbols-outlined text-green-500 text-xl drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="w-full aspect-[2/3] rounded-[50%_/_10%] overflow-hidden border-2 border-tertiary-container shadow-inner mb-2">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRFrMgAwIIag13BUXSxwvpMXVLNi_aNTM28SDPTZQ_GGAyuPOUr1vpTGrMWx7o-_UWjV1wAfpCbU8kJvLZEKwHLd4SfpCCVOJOVZG-M_lyOeIbvT7BYGwNPuf1MlaSJtP5ghnAkV-eKN8to45DqSrJrqttNoE9VBV9kVkvwI622q5eY23oQDhp1Ra2SIu-NvbETQEMjj3jiwye_xgl3WJ7ldkV54eWobojAY64aOmmEUjHe-6wukYhg5DbCq-grUQ3ckCEtCAOxLlB">
+</div>
+<div class="text-center">
+<h3 class="font-label-bold text-on-surface leading-tight text-sm">Il Re Leone</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider mt-0.5">Disney</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="paper-cutout bg-white rounded-xl border-2 border-on-surface p-2 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-1 right-1 z-10">
+<span class="material-symbols-outlined text-secondary text-xl drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="w-full aspect-[2/3] rounded-[50%_/_10%] overflow-hidden border-2 border-secondary-container shadow-inner mb-2">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5zka2whR8uXkdlfZTsQuos3EoR25oQXYhnLSMS3COvzTk85COtsPECM35xRQlYPB3TvxZ1yPE0xn9Lkd2yrepKZc4ttti01OA4LeRVZjM3qjga-criMZIL9IvVrgui0CQlNUrfWNUOYGBd-K3N8qg3zdoiMIRUlYfbccuyj5wg8dUn3sdBIV6L8xLlzXbULjqaJLqkjhTWhziNk6RTmr3Mk1wm4HASyJfewwps-RjDaBRPSHn1ISrmUvj3hAkq7vKQcn7UgpFfSpY">
+</div>
+<div class="text-center">
+<h3 class="font-label-bold text-on-surface leading-tight text-sm">Toy Story 4</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider mt-0.5">Pixar</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="paper-cutout bg-white rounded-xl border-2 border-on-surface p-2 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-1 right-1 z-10">
+<span class="material-symbols-outlined text-primary text-xl drop-shadow-sm">bookmark</span>
+</div>
+<div class="w-full aspect-[2/3] rounded-[50%_/_10%] overflow-hidden border-2 border-tertiary-container shadow-inner mb-2">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApuxvL48JofyIeDksmuG1kykCYp5tI8Pv3qvz3PPNfRcZET4oqdZD8cO-yvnzmeS2DV8c5Sj9D3rK2XGQgq9xBoB3whIk91yeeQNdIdmSoMxbcRjxvOjCz58itl1neWY9GZy7ZegY6FyCMqxXieUXlSFBpOyN1nGERTFGtPf9-N-AjOiIEs4SbJy3JS7RlCJKyRFjzzErWU-deVAU_dT_UxuhX5vxY-Px1DaeTIy4Wf5FsMOAXPBxrzlJ7kSimGpNKRsjIoWWkEwmC">
+</div>
+<div class="text-center">
+<h3 class="font-label-bold text-on-surface leading-tight text-sm">Moana</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider mt-0.5">Disney</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="paper-cutout bg-white rounded-xl border-2 border-on-surface p-2 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-1 right-1 z-10">
+<span class="material-symbols-outlined text-green-500 text-xl drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="w-full aspect-[2/3] rounded-[50%_/_10%] overflow-hidden border-2 border-secondary-container shadow-inner mb-2">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuexeHI9YhV1A7vCa6ysewQaT7i7xeouhdfxSLnn70vLIqHb-mfi2a4XHoRrjOkXcg4Sm3Jw44kmNJkqLE4nOQt5qAwMv4iT37atRM7rBjlF1EsvYTP9_fWBUPoq8-FdBaZn4Qj-lka0tuKbghaWxoBMHpNBGi9mvIGBrZEn1DqKFX3ONAQA3rQWL_xADPXUiYCCa9S4qmDbsHNvbSOqLRqE3n-CbLkaDcafnTCchcbzcLSFE9y4VGfZ_ynowf2Ahd7eGzqnZnEzdY">
+</div>
+<div class="text-center">
+<h3 class="font-label-bold text-on-surface leading-tight text-sm">Inside Out 2</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider mt-0.5">Pixar</p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="paper-cutout bg-white rounded-xl border-2 border-on-surface p-2 flex flex-col items-center relative overflow-hidden group opacity-80">
+<div class="w-full aspect-[2/3] rounded-[50%_/_10%] overflow-hidden border-2 border-on-surface/20 shadow-inner mb-2 grayscale">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKFlbmj6lb3sP6Xo1zV0sVxk4T4aXu7bEoVXrJglb_71Drbv8S8_EQExzhRmU-Xt3cum-261B7igAQMQaC2wUBmmPTWV7trrXMPUA7Lzn-Gk9ngFvGK3QeVm3iG8_nNvQ4EEbHH0lrLXrXGs3NtWBh7SowBTM-iWQGfxxMrHJImxfkfMZYvSkyuSmHsGFBxpVUAHeg9Yg5Xj6jX5zuVOpVWvhWj5eSz5ZmUIS8ZXlDRI3ujvhBK7I1oXi284sl5UgyXqtOQkYa2wwU">
+</div>
+<div class="text-center">
+<h3 class="font-label-bold text-on-surface leading-tight text-sm">Dumbo</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider mt-0.5">Soon</p>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="paper-cutout bg-white rounded-xl border-2 border-on-surface p-2 flex flex-col items-center relative overflow-hidden group opacity-80">
+<div class="w-full aspect-[2/3] rounded-[50%_/_10%] overflow-hidden border-2 border-on-surface/20 shadow-inner mb-2 grayscale">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCODJpi9DpxPIEFfWW1vgzSASpc9MRakEoq8-2_D0ce-DKb3B5Yz9mHfyP8Gycf2vy4gpXa8iUs2UqJM6x5vVYlbMGc-6895l4igTSHxqpC7TrFe60tD8ZHhOrAwEcy-dYZTzgktn50sjELm6T9JO5HY5Dc5TGLx9oulX1-WdCLonr_SXEYdqb2dj4Zx853tpPTCb-UHKiyhXtG5JCP8HXmh85fMeZi_uEjX_mY3ECBfXbfpFn19-a14jiPvfRfxJ9AWdMPzvWj4AQ-">
+</div>
+<div class="text-center">
+<h3 class="font-label-bold text-on-surface leading-tight text-sm">Ratatouille</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider mt-0.5">Locked</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile pb-6 pt-3 bg-surface-container border-t-4 border-on-surface shadow-[0_-4px_12px_0_rgba(185,0,62,0.2)] rounded-t-lg"><a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-2 shadow-[0_4px_0_0_rgba(145,0,47,1)] transition-all min-h-[48px]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-[12px] font-label-bold">Vault</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors px-4 py-2 min-h-[48px]" href="#">
+<span class="material-symbols-outlined">star</span>
+<span class="text-[12px] font-label-bold">Wishlist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors px-4 py-2 min-h-[48px]" href="#">
+<span class="material-symbols-outlined">movie_filter</span>
+<span class="text-[12px] font-label-bold">Cinema</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors px-4 py-2 min-h-[48px]" href="#">
+<span class="material-symbols-outlined">person_celebrate</span>
+<span class="text-[12px] font-label-bold">Profile</span>
+</a></nav>
+<script>
+        // Micro-interactions for magic wand
+        const wand = document.querySelector('.magic-wand');
+        const searchInput = document.querySelector('.magic-input');
+
+        searchInput.addEventListener('focus', () => {
+            createSparkles(wand);
+        });
+
+        function createSparkles(el) {
+            const colors = ['#b9003e', '#e9c400', '#54c7ff', '#ffffff'];
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('span');
+                    sparkle.className = 'material-symbols-outlined sparkle';
+                    sparkle.textContent = 'auto_awesome';
+                    sparkle.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    sparkle.style.left = `${Math.random() * 40 - 20}px`;
+                    sparkle.style.top = `${Math.random() * 40 - 20}px`;
+                    sparkle.style.fontSize = `${Math.random() * 15 + 10}px`;
+                    el.appendChild(sparkle);
+                    setTimeout(() => sparkle.remove(), 1500);
+                }, i * 150);
+            }
+        }
+
+        // Add wiggle to cards on hover
+        const cards = document.querySelectorAll('.paper-cutout');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.animation = 'wiggle 0.3s ease-in-out';
+                setTimeout(() => card.style.animation = '', 300);
+            });
+        });
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes wiggle {
+                0%, 100% { transform: rotate(0deg); }
+                25% { transform: rotate(-3deg); }
+                75% { transform: rotate(3deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+
+</body></html>
