@@ -23,7 +23,19 @@ export default function Sticker() {
   }, []);
 
   return (
-    <div className="fixed bottom-0 left-0 z-50 pointer-events-auto" style={{ transform: 'scale(0.35)', transformOrigin: 'bottom left' }}>
+    <div className="fixed bottom-0 left-0 z-50 pointer-events-auto" style={{ transform: 'scale(0.8)', transformOrigin: 'bottom left' }}>
+      {/* Pop-up simpatico */}
+      <div 
+        className="absolute -top-12 left-1/4 bg-white border-4 border-on-surface rounded-3xl px-8 py-4 text-3xl font-label-bold text-on-surface whitespace-nowrap z-10"
+        style={{ boxShadow: '6px 6px 0 #1b1c15', animation: 'float 3s ease-in-out infinite' }}
+      >
+        Ciao! Scegliamo un film? ✨
+        {/* Coda del fumetto */}
+        <div 
+          className="absolute -bottom-3 left-12 w-6 h-6 bg-white border-b-4 border-r-4 border-on-surface transform rotate-45"
+        ></div>
+      </div>
+
       <sticker-forge id="my-sticker" style={{ display: 'block', width: '640px', height: '420px' }}></sticker-forge>
     </div>
   );
