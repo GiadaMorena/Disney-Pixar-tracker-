@@ -1,20 +1,10 @@
-import json
 import re
 
-transcript_path = r'C:\Users\giada\.gemini\antigravity\brain\6c928cb3-fea1-4162-a803-40cc7aec268d\.system_generated\logs\transcript.jsonl'
-user_input_with_sticker = ''
-with open(transcript_path, 'r', encoding='utf-8') as f:
-    for line in f:
-        try:
-            data = json.loads(line)
-            if data.get('type') == 'USER_INPUT' and 'sticker-forge' in data.get('content', ''):
-                user_input_with_sticker = data.get('content', '')
-        except:
-            pass
+sticker_txt_path = r'C:\Users\giada\Documents\antigravity\splendid-nobel\disney-pixar-tracker\Materiali\sticker.txt'
+with open(sticker_txt_path, 'r', encoding='utf-8') as f:
+    content = f.read()
 
-print('Message found with length:', len(user_input_with_sticker))
-
-match = re.search(r'"src":\s*"(data:image/[^"]+)"', user_input_with_sticker)
+match = re.search(r'"src":\s*"(data:image/[^"]+)"', content)
 if match:
     base64_src = match.group(1)
     sticker_jsx = f"""import React, {{ useEffect }} from 'react';
@@ -46,8 +36,6 @@ export default function Sticker() {{
 """
     with open(r'C:\Users\giada\Documents\antigravity\splendid-nobel\disney-pixar-tracker\src\components\Sticker.jsx', 'w', encoding='utf-8') as sf:
         sf.write(sticker_jsx)
-    print('Sticker.jsx created')
+    print('Sticker.jsx updated successfully')
 else:
-    print('Base64 not found in user input. It might have been truncated.')
-    print('Here is the start of the message:')
-    print(user_input_with_sticker[:500])
+    print('Base64 not found in sticker.txt')
