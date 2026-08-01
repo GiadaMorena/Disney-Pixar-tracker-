@@ -84,7 +84,8 @@ export const POSTER_MAP = {
 };
 
 export function getPosterUrl(movie) {
-  const override = POSTER_MAP[movie.id];
+  const idStr = String(movie.id).startsWith('movie-') ? movie.id : `movie-${movie.id}`;
+  const override = POSTER_MAP[idStr];
   if (override) return override;
   if (movie.poster && movie.poster.startsWith('http')) return movie.poster;
   return null;

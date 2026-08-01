@@ -23,16 +23,16 @@ export default function Sticker() {
   }, []);
 
   return (
-    <div className="fixed bottom-0 left-0 z-50 origin-bottom-left hidden md:block md:scale-[0.5] lg:scale-[0.7] pointer-events-none md:pointer-events-auto">
+    <div className="fixed bottom-0 left-0 z-50 origin-bottom-left hidden md:block md:scale-[0.35] lg:scale-[0.4] pointer-events-none md:pointer-events-auto">
       {/* Pop-up simpatico */}
       <div 
-        className="absolute -top-12 left-1/4 bg-white border-4 border-on-surface rounded-3xl px-8 py-4 text-3xl font-label-bold text-on-surface whitespace-nowrap z-10 hidden md:block"
-        style={{ boxShadow: '6px 6px 0 #1b1c15', animation: 'float 3s ease-in-out infinite' }}
+        className="absolute -top-6 left-1/3 bg-white border-[3px] border-on-surface rounded-2xl px-5 py-2 text-xl font-label-bold text-on-surface whitespace-nowrap z-10 hidden md:block"
+        style={{ boxShadow: '4px 4px 0 #1b1c15', animation: 'float 3s ease-in-out infinite' }}
       >
         Ciao! Scegliamo un film? ✨
         {/* Coda del fumetto */}
         <div 
-          className="absolute -bottom-3 left-12 w-6 h-6 bg-white border-b-4 border-r-4 border-on-surface transform rotate-45"
+          className="absolute -bottom-2 left-6 w-4 h-4 bg-white border-b-[3px] border-r-[3px] border-on-surface transform rotate-45"
         ></div>
       </div>
 
